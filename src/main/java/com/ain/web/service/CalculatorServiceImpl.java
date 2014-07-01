@@ -27,4 +27,6 @@ public class CalculatorServiceImpl implements CalculatorService {
     public double log10(int value) { return Math.log10(value); }
 
     public double exp(int value) { return Math.exp(value); }
+    
+    public double sqrt(int value) { return Math.sqrt(value); }
 }

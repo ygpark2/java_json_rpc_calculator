@@ -10,12 +10,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Calculator {
-
-    foo.call(
-            'plus', [ 3, 4 ],
-    function(result) { alert('Foo bar answered: ' + result.my_answer); },
-    function(error)  { console.log('There was an error', error); }
-    );
 	@Test
 	public void test() {
         System.out.println("============================");

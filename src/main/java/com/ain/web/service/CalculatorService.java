@@ -12,4 +12,5 @@ public interface CalculatorService {
     int divide(int firstNum, int secondNum);
     double log10(int value);
     double exp(int value);
+    double sqrt(int value);
 }
