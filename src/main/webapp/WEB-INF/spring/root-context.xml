@@ -4,22 +4,23 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	<!-- 
+
+	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
 	<bean id="calculatorService" class="com.ain.web.service.CalculatorServiceImpl"></bean>
 
-    <bean name="/CalculatorService.json" class="com.googlecode.jsonrpc4j.spring.JsonServiceExporter">
+    <bean name="/calculatorService" class="com.googlecode.jsonrpc4j.spring.JsonServiceExporter">
         <property name="service" ref="calculatorService"/>
         <property name="serviceInterface" value="com.ain.web.service.CalculatorService"/>
     </bean>
+
+    <!--
+    <bean class="com.googlecode.jsonrpc4j.spring.AutoJsonRpcServiceExporter"/>
+
+    <bean class="com.ain.web.service.CalculatorServiceImpl" />
      -->
-
-	<bean class="com.googlecode.jsonrpc4j.spring.AutoJsonRpcServiceExporter"/>
-
-	<bean class="com.ain.web.service.CalculatorServiceImpl" />
-  
-    <bean class="com.googlecode.jsonrpc4j.spring.JsonProxyFactoryBean">
-        <property name="serviceUrl" value="http://localhost:8080/ain/json/rpc/calculator.json"/>
-        <property name="serviceInterface" value="com.ain.web.service.CalculatorService"/>
+    <bean class="com.googlecode.jsonrpc4j.spring.AutoJsonRpcClientProxyCreator">
+        <property name="baseUrl" value="http://localhost:8080/api/"/>
+        <property name="scanPackage" value="com.ain.web.service"/>
     </bean>
 
 </beans>

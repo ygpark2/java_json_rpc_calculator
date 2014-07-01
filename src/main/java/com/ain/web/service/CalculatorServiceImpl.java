@@ -1,9 +1,11 @@
 package com.ain.web.service;
 
+import java.math.BigDecimal;
+
 public class CalculatorServiceImpl implements CalculatorService {
 
-	public int point(int firstNum, int secondNum) {
-		return firstNum;
+	public BigDecimal point(String floatStr) {
+		return new BigDecimal(floatStr);
 	}
 	
     public int plus(int firstNum, int secondNum) {
@@ -22,4 +24,7 @@ public class CalculatorServiceImpl implements CalculatorService {
     	return firstNum / secondNum;
     }
 
+    public double log10(int value) { return Math.log10(value); }
+
+    public double exp(int value) { return Math.exp(value); }
 }
